@@ -1,0 +1,47 @@
+/* ═══════════════════════════════════════════════════
+   NEXAURO — Brand Tokens & CSS Custom Properties
+   ═══════════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Inter:wght@400;500&display=swap');
+
+:root {
+  /* ─── Primary Colors ─── */
+  --navy:  #0F2B47;
+  --gold:  #D4AF37;
+  --teal:  #00B4D8;
+  --bg:    #F8F9FA;
+  --text:  #2C3E50;
+  --muted: #7F8C8D;
+
+  /* ─── Extended Palette ─── */
+  --navy-deep: #071A2E;
+  --navy-dark: #08192A;
+  --red:       #E74C3C;
+  --green-wa:  #25D366;
+  --pricing-bg:#EEF2F7;
+
+  /* ─── Spacing ─── */
+  --radius: 16px;
+  --radius-lg: 24px;
+  --radius-sm: 8px;
+  --radius-pill: 20px;
+
+  /* ─── Transitions ─── */
+  --transition: 0.3s ease;
+  --transition-fast: 0.2s ease;
+  --transition-panel: 0.38s cubic-bezier(0.16,1,0.3,1);
+
+  /* ─── Typography ─── */
+  --font-heading: 'Montserrat', sans-serif;
+  --font-body:    'Inter', sans-serif;
+
+  /* ─── Navbar ─── */
+  --navbar-height: 72px;
+
+  /* ─── Shadows ─── */
+  --shadow-card: 0 12px 48px rgba(15,43,71,0.07);
+  --shadow-card-hover: 0 20px 52px rgba(15,43,71,0.12);
+  --shadow-gold: 0 8px 28px rgba(212,175,55,0.45);
+  --shadow-navbar: 0 4px 24px rgba(0,0,0,0.3);
+  --shadow-panel: -8px 0 48px rgba(0,0,0,0.18);
+}

@@ -1,0 +1,87 @@
+/* ═══════════════════════════════════════
+   NEXAURO — Case Study + Testimonials
+   ═══════════════════════════════════════ */
+
+/* CASE STUDY */
+#case-study { background: var(--navy); color: white; }
+.cs-problem-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 72px; }
+.cs-before-card { background: rgba(231,76,60,0.12); border: 1px solid rgba(231,76,60,0.3); border-radius: 16px; padding: 36px; }
+.cs-before-label { color: #E74C3C; font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 20px; }
+.cs-pain-row { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 16px; }
+.cs-pain-icon { font-size: 16px; flex-shrink: 0; margin-top: 2px; }
+.cs-pain-text { color: white; font-size: 15px; line-height: 1.65; }
+.cs-chaos-mockup { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 28px; height: 100%; min-height: 260px; position: relative; overflow: hidden; }
+.cs-chaos-label { color: rgba(255,255,255,0.4); font-size: 12px; }
+.cs-data-row { height: 10px; border-radius: 4px; background: rgba(255,255,255,0.1); margin-top: 12px; }
+.cs-warning { position: absolute; background: #E74C3C; color: white; font-size: 10px; font-weight: 700; padding: 4px 10px; border-radius: 4px; white-space: nowrap; }
+.cs-solution-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 800px; margin: 0 auto; margin-top: 28px; }
+.cs-sol-card { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); border-radius: 16px; padding: 32px; }
+.cs-sol-icon { width: 48px; height: 48px; border-radius: 50%; background: rgba(212,175,55,0.2); display: flex; align-items: center; justify-content: center; font-size: 22px; }
+.cs-sol-title { color: white; font-family: var(--font-heading); font-weight: 600; font-size: 16px; margin-top: 14px; }
+.cs-sol-text { color: rgba(255,255,255,0.65); font-size: 13px; line-height: 1.6; margin-top: 8px; }
+
+/* Metrics */
+.cs-metrics-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 32px; }
+.cs-metric { background: rgba(255,255,255,0.07); border: 1px solid rgba(212,175,55,0.25); border-radius: 16px; padding: 36px 28px; text-align: center; min-width: 170px; flex: 1; max-width: 220px; }
+.cs-metric-num { color: var(--gold); font-family: var(--font-heading); font-weight: 700; font-size: 52px; display: block; }
+.cs-metric-label { color: rgba(255,255,255,0.7); font-size: 14px; margin-top: 8px; }
+.cs-metric-bar { width: 40px; height: 3px; background: var(--teal); margin: 14px auto 0; }
+
+/* Timeline */
+.cs-timeline { display: flex; justify-content: center; align-items: center; margin-top: 52px; }
+.cs-step { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.cs-step-circle { width: 44px; height: 44px; border: 2px solid var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--gold); font-size: 18px; font-weight: 700; }
+.cs-step-date { color: white; font-size: 13px; font-weight: 700; }
+.cs-step-action { color: var(--gold); font-size: 11px; text-transform: uppercase; letter-spacing: 1px; }
+.cs-step-line { width: 80px; border-top: 2px dashed rgba(212,175,55,0.4); margin: 0 8px; align-self: flex-start; margin-top: 22px; }
+
+/* Quote */
+.cs-quote { margin-top: 72px; max-width: 760px; margin-left: auto; margin-right: auto; text-align: center; }
+.cs-quote-mark { font-family: var(--font-heading); font-size: 96px; color: var(--gold); line-height: 0.8; margin-bottom: 16px; display: block; }
+.cs-quote-text { color: white; font-size: 19px; line-height: 1.75; font-style: italic; }
+.cs-quote-attr { color: var(--gold); font-size: 14px; font-weight: 600; margin-top: 20px; }
+
+@media (max-width: 768px) {
+  .cs-problem-grid { grid-template-columns: 1fr; }
+  .cs-solution-grid { grid-template-columns: 1fr; }
+  .cs-metric-num { font-size: 36px; }
+  .cs-metric { min-width: 140px; padding: 24px 16px; }
+  .cs-timeline { flex-wrap: wrap; gap: 16px; }
+  .cs-step-line { display: none; }
+  .cs-quote-text { font-size: 16px; }
+}
+
+/* TESTIMONIALS */
+#testimonials { background: white; }
+.carousel-container { position: relative; max-width: 1100px; margin: 60px auto 0; overflow: hidden; padding: 0 36px; }
+.carousel-track { display: flex; transition: transform 0.45s ease; will-change: transform; }
+.testimonial-card { padding: 36px 32px; background: white; border: 1px solid rgba(15,43,71,0.1); border-radius: 20px; margin: 0 12px; flex-shrink: 0; transition: transform 0.3s, border-color 0.3s; }
+.testimonial-card.active { transform: scale(1.03); border-color: var(--gold); }
+.test-stars { color: var(--gold); font-size: 20px; letter-spacing: 3px; }
+.test-quote { color: var(--navy); font-size: 15px; font-style: italic; line-height: 1.75; margin-top: 16px; }
+.test-avatar-row { margin-top: 28px; display: flex; align-items: center; gap: 14px; }
+.test-initials { width: 48px; height: 48px; background: var(--navy); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--gold); font-family: var(--font-heading); font-weight: 700; font-size: 15px; flex-shrink: 0; }
+.test-name { color: var(--navy); font-size: 15px; font-weight: 600; display: block; }
+.test-biz { color: var(--muted); font-size: 13px; margin-top: 2px; display: block; }
+
+/* Carousel Controls */
+.carousel-btn { width: 48px; height: 48px; border-radius: 50%; background: var(--navy); color: white; border: none; cursor: pointer; font-size: 18px; position: absolute; top: 50%; transform: translateY(-50%); z-index: 10; display: flex; align-items: center; justify-content: center; }
+.carousel-btn:hover { background: var(--gold); color: var(--navy); }
+.carousel-prev { left: -10px; }
+.carousel-next { right: -10px; }
+.carousel-dots { display: flex; justify-content: center; gap: 8px; margin-top: 32px; }
+.carousel-dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(15,43,71,0.2); cursor: pointer; transition: all 0.2s; border: none; padding: 0; }
+.carousel-dot.active { background: var(--gold); width: 24px; border-radius: 4px; }
+
+/* Social Proof */
+.sp-strip { display: flex; justify-content: center; gap: 56px; flex-wrap: wrap; margin-top: 72px; }
+.sp-item { text-align: center; }
+.sp-num { font-family: var(--font-heading); font-weight: 700; font-size: 44px; color: var(--navy); display: block; }
+.sp-label { color: var(--muted); font-size: 14px; margin-top: 6px; }
+
+@media (max-width: 768px) {
+  .carousel-btn { display: none; }
+  .carousel-container { padding: 0 12px; }
+  .sp-strip { gap: 32px; }
+  .sp-num { font-size: 32px; }
+}

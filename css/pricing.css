@@ -1,0 +1,102 @@
+/* ═══════════════════════════════════════
+   NEXAURO — Pricing Cards + Comparison
+   ═══════════════════════════════════════ */
+
+#pricing { background: #EEF2F7; }
+
+.pricing-grid { display: flex; gap: 28px; align-items: start; max-width: 1100px; margin: 64px auto 0; }
+.pricing-card { flex: 1; border-radius: 24px; overflow: hidden; position: relative; transition: transform 0.3s, box-shadow 0.3s; }
+.pricing-card:hover { transform: translateY(-8px); box-shadow: 0 20px 60px rgba(15,43,71,0.12); }
+.pricing-card.elevated { transform: translateY(-20px); border: 2px solid var(--gold); }
+.pricing-card.elevated:hover { transform: translateY(-28px); }
+
+.pricing-badge { position: absolute; top: 0; left: 50%; transform: translateX(-50%); background: var(--gold); color: var(--navy); font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 7px 22px; border-radius: 0 0 14px 14px; white-space: nowrap; z-index: 2; }
+
+.pricing-header { padding: 36px; }
+.pricing-header.navy-bg { background: var(--navy); }
+.pricing-header.gold-bg { background: var(--gold); padding-top: 44px; }
+.pricing-header.deep-bg { background: #071A2E; }
+
+.pricing-name { font-family: var(--font-heading); font-weight: 700; font-size: 22px; }
+.pricing-header.navy-bg .pricing-name, .pricing-header.deep-bg .pricing-name { color: white; }
+.pricing-header.gold-bg .pricing-name { color: var(--navy); }
+
+.pricing-price { font-family: var(--font-heading); font-weight: 700; font-size: 40px; margin-top: 12px; }
+.pricing-header.navy-bg .pricing-price, .pricing-header.deep-bg .pricing-price { color: var(--gold); }
+.pricing-header.gold-bg .pricing-price { color: var(--navy); }
+
+.pricing-sub { font-size: 13px; margin-top: 4px; }
+.pricing-header.navy-bg .pricing-sub { color: rgba(255,255,255,0.55); }
+.pricing-header.gold-bg .pricing-sub { color: rgba(15,43,71,0.6); }
+.pricing-header.deep-bg .pricing-sub { color: rgba(255,255,255,0.5); }
+
+.pricing-body { background: white; padding: 36px; }
+.pricing-card:not(.elevated) .pricing-body { border: 1px solid rgba(15,43,71,0.1); border-top: none; }
+
+.pricing-features { list-style: none; }
+.pricing-features li { font-size: 15px; color: var(--navy); line-height: 2; display: flex; align-items: center; gap: 10px; }
+.pricing-features li::before { content: '✓'; color: var(--gold); font-weight: 700; font-size: 14px; }
+
+.pricing-best { font-style: italic; color: var(--muted); font-size: 14px; border-top: 1px solid rgba(0,0,0,0.07); margin-top: 24px; padding-top: 16px; }
+
+.pricing-body .btn-primary, .pricing-body .btn-secondary { width: 100%; height: 52px; display: flex; align-items: center; justify-content: center; margin-top: 20px; }
+
+/* Comparison Table */
+.comparison-wrapper { margin-top: 64px; max-width: 900px; margin-left: auto; margin-right: auto; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.comparison-table { border-collapse: collapse; width: 100%; min-width: 600px; }
+.comparison-table thead th { background: var(--navy); color: white; font-size: 13px; font-weight: 700; height: 52px; padding: 0 16px; text-align: center; }
+.comparison-table thead th:first-child { text-align: left; border-radius: 8px 0 0 0; }
+.comparison-table thead th:last-child { border-radius: 0 8px 0 0; }
+.comparison-table tbody td { font-size: 14px; height: 52px; padding: 0 16px; border-bottom: 1px solid rgba(0,0,0,0.06); text-align: center; }
+.comparison-table tbody td:first-child { text-align: left; color: var(--navy); font-weight: 500; }
+.comparison-table tbody tr:nth-child(even) { background: white; }
+.comparison-table tbody tr:nth-child(odd) { background: #F8F9FA; }
+.check-mark { color: var(--gold); font-weight: 700; font-size: 16px; }
+.dash-mark { color: var(--muted); }
+
+.trust-strip { margin-top: 40px; text-align: center; color: var(--muted); font-size: 14px; }
+
+@media (max-width: 768px) {
+  .pricing-grid { flex-direction: column; align-items: stretch; }
+  .pricing-card.elevated { transform: none; }
+  .pricing-card.elevated:hover { transform: translateY(-8px); }
+  .pricing-price { font-size: 28px; }
+}
+
+/* FAQ */
+#faq { background: white; }
+.faq-wrapper { max-width: 720px; margin: 56px auto 0; }
+.faq-item { border-bottom: 1px solid rgba(15,43,71,0.1); }
+.faq-q { width: 100%; padding: 24px 0; display: flex; justify-content: space-between; align-items: center; background: none; border: none; cursor: pointer; text-align: left; }
+.faq-q span { color: var(--navy); font-family: var(--font-heading); font-weight: 600; font-size: 17px; line-height: 1.4; flex: 1; padding-right: 16px; }
+.faq-icon { width: 28px; height: 28px; border: 1px solid rgba(15,43,71,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 16px; color: var(--navy); flex-shrink: 0; transition: transform 0.3s, color 0.3s, border-color 0.3s; }
+.faq-q[aria-expanded="true"] .faq-icon { transform: rotate(45deg); color: var(--gold); border-color: var(--gold); }
+.faq-a { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+.faq-a p { font-size: 15px; color: var(--muted); line-height: 1.8; padding-bottom: 24px; }
+
+/* TEAM */
+#team { background: var(--navy); color: white; }
+.team-grid { display: grid; grid-template-columns: 1fr 1fr; max-width: 800px; margin: 64px auto 0; gap: 32px; }
+.founder-card { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); border-radius: 24px; padding: 48px 40px; text-align: center; transition: transform 0.3s, box-shadow 0.3s; }
+.founder-card:hover { transform: translateY(-6px); box-shadow: 0 0 36px rgba(212,175,55,0.22); }
+.founder-avatar { width: 88px; height: 88px; border-radius: 50%; background: var(--gold); margin: 0 auto; display: flex; align-items: center; justify-content: center; font-family: var(--font-heading); font-weight: 700; font-size: 28px; color: var(--navy); }
+.founder-name { color: white; font-family: var(--font-heading); font-weight: 700; font-size: 22px; margin-top: 24px; }
+.founder-title { color: var(--gold); font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-top: 6px; }
+.founder-line { width: 40px; height: 2px; background: var(--gold); margin: 20px auto; }
+.founder-bio { color: rgba(255,255,255,0.65); font-size: 15px; line-height: 1.75; }
+.founder-linkedin { margin-top: 24px; width: 40px; height: 40px; border: 1px solid rgba(212,175,55,0.5); background: transparent; border-radius: 50%; color: var(--gold); font-family: var(--font-heading); font-weight: 700; font-size: 11px; letter-spacing: 1px; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; text-decoration: none; transition: background 0.2s, color 0.2s; }
+.founder-linkedin:hover { background: var(--gold); color: var(--navy); }
+.founder-quote { color: rgba(255,255,255,0.45); font-size: 14px; font-style: italic; margin-top: 20px; line-height: 1.6; }
+
+/* Values */
+.values-strip { display: flex; justify-content: center; gap: 48px; flex-wrap: wrap; margin-top: 80px; }
+.value-item { text-align: center; }
+.value-icon { width: 56px; height: 56px; background: rgba(212,175,55,0.15); border: 1px solid rgba(212,175,55,0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 22px; margin: 0 auto; }
+.value-title { color: white; font-family: var(--font-heading); font-weight: 700; font-size: 17px; margin-top: 16px; }
+.value-text { color: rgba(255,255,255,0.6); font-size: 14px; line-height: 1.6; max-width: 200px; margin: 8px auto 0; }
+
+@media (max-width: 768px) {
+  .team-grid { grid-template-columns: 1fr; }
+  .founder-card { padding: 36px 24px; }
+  .values-strip { gap: 32px; }
+}

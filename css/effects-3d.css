@@ -1,0 +1,281 @@
+/* ═══════════════════════════════════════
+   NEXAURO — 3D Effects & Premium Animations
+   ═══════════════════════════════════════ */
+
+/* ─── HERO 3D DASHBOARD IMAGE ─── */
+.hero-3d-visual {
+  position: absolute;
+  bottom: -5%;
+  right: -8%;
+  width: 55%;
+  max-width: 700px;
+  z-index: 1;
+  pointer-events: none;
+  animation: heroFloat 6s ease-in-out infinite;
+  filter: drop-shadow(0 20px 60px rgba(0, 180, 216, 0.3));
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.hero-3d-visual img {
+  width: 100%;
+  height: auto;
+  transform: rotateY(-5deg) rotateX(5deg);
+  transition: transform 0.6s ease;
+}
+
+@keyframes heroFloat {
+  0%, 100% { transform: translateY(0) rotateZ(0deg); }
+  33% { transform: translateY(-15px) rotateZ(0.5deg); }
+  66% { transform: translateY(-8px) rotateZ(-0.3deg); }
+}
+
+/* ─── ANIMATED GRADIENT ORBS (Background decoration) ─── */
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.orb-gold {
+  background: radial-gradient(circle, rgba(212,175,55,0.25), transparent 70%);
+  animation: orbPulse 8s ease-in-out infinite;
+}
+
+.orb-teal {
+  background: radial-gradient(circle, rgba(0,180,216,0.2), transparent 70%);
+  animation: orbPulse 10s ease-in-out infinite reverse;
+}
+
+@keyframes orbPulse {
+  0%, 100% { transform: scale(1) translate(0, 0); opacity: 0.6; }
+  25% { transform: scale(1.2) translate(20px, -10px); opacity: 0.8; }
+  50% { transform: scale(0.9) translate(-15px, 15px); opacity: 0.5; }
+  75% { transform: scale(1.1) translate(10px, 5px); opacity: 0.7; }
+}
+
+/* ─── 3D TILT CARDS ─── */
+.tilt-3d {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  transition: transform 0.4s ease;
+}
+
+.tilt-3d:hover {
+  transform: perspective(1000px) rotateX(3deg) rotateY(-3deg) translateZ(10px);
+}
+
+.tilt-3d::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(212,175,55,0.08), transparent 50%, rgba(0,180,216,0.05));
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.tilt-3d:hover::after {
+  opacity: 1;
+}
+
+/* ─── SOLUTIONS 3D IMAGE ─── */
+.solutions-3d-visual {
+  text-align: center;
+  margin: 48px auto 0;
+  max-width: 600px;
+  position: relative;
+}
+
+.solutions-3d-visual img {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  animation: solutionsGlow 4s ease-in-out infinite;
+  filter: drop-shadow(0 12px 40px rgba(0, 180, 216, 0.25));
+}
+
+@keyframes solutionsGlow {
+  0%, 100% { filter: drop-shadow(0 12px 40px rgba(0, 180, 216, 0.25)); }
+  50% { filter: drop-shadow(0 16px 50px rgba(212, 175, 55, 0.3)); }
+}
+
+/* ─── CASE STUDY 3D IMAGE ─── */
+.cs-transform-visual {
+  margin: 56px auto 0;
+  max-width: 800px;
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.cs-transform-visual img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 16px;
+  animation: csReveal 1s ease-out;
+}
+
+.cs-transform-visual::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, var(--gold), transparent);
+  z-index: 2;
+  animation: csLinePulse 3s ease-in-out infinite;
+}
+
+@keyframes csLinePulse {
+  0%, 100% { opacity: 0.6; box-shadow: 0 0 8px var(--gold); }
+  50% { opacity: 1; box-shadow: 0 0 20px var(--gold); }
+}
+
+@keyframes csReveal {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* ─── MORPHING BLOB (Section backgrounds) ─── */
+.morph-blob {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  filter: blur(100px);
+  opacity: 0.15;
+  pointer-events: none;
+  animation: morphBlob 12s ease-in-out infinite;
+}
+
+@keyframes morphBlob {
+  0%, 100% { border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%; transform: rotate(0deg) scale(1); }
+  25% { border-radius: 55% 45% 35% 65% / 60% 35% 65% 40%; transform: rotate(90deg) scale(1.1); }
+  50% { border-radius: 30% 70% 55% 45% / 40% 60% 40% 60%; transform: rotate(180deg) scale(0.95); }
+  75% { border-radius: 65% 35% 45% 55% / 55% 40% 60% 45%; transform: rotate(270deg) scale(1.05); }
+}
+
+/* ─── TEXT REVEAL ANIMATION ─── */
+.text-reveal {
+  overflow: hidden;
+}
+
+.text-reveal span {
+  display: inline-block;
+  transform: translateY(100%);
+  animation: textSlideUp 0.8s ease forwards;
+}
+
+@keyframes textSlideUp {
+  to { transform: translateY(0); }
+}
+
+/* ─── STAGGER FADE-IN ─── */
+.stagger-in > * {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.stagger-in.visible > *:nth-child(1) { transition-delay: 0s; }
+.stagger-in.visible > *:nth-child(2) { transition-delay: 0.1s; }
+.stagger-in.visible > *:nth-child(3) { transition-delay: 0.15s; }
+.stagger-in.visible > *:nth-child(4) { transition-delay: 0.2s; }
+.stagger-in.visible > *:nth-child(5) { transition-delay: 0.25s; }
+
+.stagger-in.visible > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─── 3D PRICING CARDS ─── */
+.pricing-card {
+  transform-style: preserve-3d;
+  perspective: 800px;
+}
+
+.pricing-card:hover .pricing-header {
+  transform: translateZ(20px);
+  transition: transform 0.4s ease;
+}
+
+.pricing-card:hover .pricing-body {
+  transform: translateZ(10px);
+  transition: transform 0.4s ease;
+}
+
+/* ─── GLOWING BORDER ANIMATION ─── */
+.glow-border {
+  position: relative;
+  overflow: hidden;
+}
+
+.glow-border::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: conic-gradient(from 0deg, var(--gold), var(--teal), var(--gold), var(--teal), var(--gold));
+  border-radius: inherit;
+  z-index: -1;
+  animation: glowRotate 4s linear infinite;
+}
+
+@keyframes glowRotate {
+  to { transform: rotate(360deg); }
+}
+
+/* ─── MAGNETIC BUTTONS ─── */
+.btn-magnetic {
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* ─── SECTION ENTRANCE: SLIDE FROM SIDES ─── */
+.slide-left {
+  opacity: 0;
+  transform: translateX(-60px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.slide-right {
+  opacity: 0;
+  transform: translateX(60px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.slide-left.visible,
+.slide-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ─── SCALE-IN FOR METRICS ─── */
+.scale-in {
+  opacity: 0;
+  transform: scale(0.7);
+  transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.scale-in.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ─── RESPONSIVE: Hide 3D visuals on mobile ─── */
+@media (max-width: 1024px) {
+  .hero-3d-visual { display: none; }
+}
+
+@media (max-width: 768px) {
+  .morph-blob { width: 200px; height: 200px; }
+  .solutions-3d-visual { max-width: 90%; }
+  .cs-transform-visual { max-width: 95%; }
+}
