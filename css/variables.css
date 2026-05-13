@@ -1,47 +1,44 @@
 /* ═══════════════════════════════════════════════════
-   NEXAURO — Brand Tokens & CSS Custom Properties
+   NEXAURO — Apple-Level Design System
+   Dark cinematic aesthetic, massive typography
    ═══════════════════════════════════════════════════ */
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Inter:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
 
 :root {
-  /* ─── Primary Colors ─── */
-  --navy:  #0F2B47;
-  --gold:  #D4AF37;
-  --teal:  #00B4D8;
-  --bg:    #F8F9FA;
-  --text:  #2C3E50;
-  --muted: #7F8C8D;
+  /* ── Colors ── */
+  --bg:       #000000;
+  --bg-dark:  #050505;
+  --bg-card:  #0a0a0a;
+  --bg-elev:  #111111;
+  --navy:     #0F2B47;
+  --gold:     #D4AF37;
+  --gold-light: #F4E190;
+  --teal:     #00B4D8;
+  --teal-light: #7DEAFF;
+  --text:     #f5f5f7;
+  --text-dim: rgba(245,245,247,0.6);
+  --text-muted: rgba(245,245,247,0.35);
+  --border:   rgba(255,255,255,0.08);
 
-  /* ─── Extended Palette ─── */
-  --navy-deep: #071A2E;
-  --navy-dark: #08192A;
-  --red:       #E74C3C;
-  --green-wa:  #25D366;
-  --pricing-bg:#EEF2F7;
+  /* ── Typography ── */
+  --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 
-  /* ─── Spacing ─── */
-  --radius: 16px;
-  --radius-lg: 24px;
-  --radius-sm: 8px;
-  --radius-pill: 20px;
+  /* ── Spacing ── */
+  --section-pad: 160px;
+  --section-pad-mobile: 80px;
 
-  /* ─── Transitions ─── */
-  --transition: 0.3s ease;
-  --transition-fast: 0.2s ease;
-  --transition-panel: 0.38s cubic-bezier(0.16,1,0.3,1);
+  /* ── Radii ── */
+  --radius: 24px;
+  --radius-sm: 14px;
+  --radius-pill: 100px;
 
-  /* ─── Typography ─── */
-  --font-heading: 'Montserrat', sans-serif;
-  --font-body:    'Inter', sans-serif;
+  /* ── Transitions ── */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
 
-  /* ─── Navbar ─── */
-  --navbar-height: 72px;
-
-  /* ─── Shadows ─── */
-  --shadow-card: 0 12px 48px rgba(15,43,71,0.07);
-  --shadow-card-hover: 0 20px 52px rgba(15,43,71,0.12);
-  --shadow-gold: 0 8px 28px rgba(212,175,55,0.45);
-  --shadow-navbar: 0 4px 24px rgba(0,0,0,0.3);
-  --shadow-panel: -8px 0 48px rgba(0,0,0,0.18);
+  /* ── Shadows ── */
+  --shadow-gold: 0 0 60px rgba(212,175,55,0.15);
+  --shadow-glow: 0 0 80px rgba(0,180,216,0.1);
 }

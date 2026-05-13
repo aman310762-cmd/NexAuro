@@ -1,133 +1,29 @@
 /* ═══════════════════════════════════════
-   NEXAURO — Enhancement Polish Layer
-   Additional micro-animations & premium effects
+   NEXAURO — Polish Layer (Dark Theme)
    ═══════════════════════════════════════ */
 
-/* ─── Gradient text shimmer on hover for gold heading elements ─── */
-.nav-logo {
-  background: linear-gradient(135deg, #D4AF37, #F4E190, #D4AF37);
-  background-size: 200% auto;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  transition: background-position 0.5s ease;
-}
-.nav-logo:hover {
-  background-position: right center;
-}
-
-/* ─── Section divider accents ─── */
-#how-it-works::before,
-#solutions::before,
-#testimonials::before,
-#pricing::before,
-#faq::before {
-  content: '';
-  display: block;
-  width: 60px;
-  height: 3px;
-  background: linear-gradient(90deg, var(--gold), var(--teal));
-  margin: 0 auto 0;
-  border-radius: 2px;
-  position: relative;
-  top: -20px;
-}
-
-/* ─── Phase card hover glow ─── */
-.phase-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.phase-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 16px 48px rgba(212,175,55,0.15);
-}
-
-/* ─── Button press effect ─── */
-.btn-primary:active,
-.btn-secondary:active {
-  transform: scale(0.97) !important;
-}
-
-/* ─── Pricing card shimmer on Growth ─── */
-.pricing-card.elevated::before {
-  content: '';
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
-  background: linear-gradient(45deg, #D4AF37, #F4E190, #D4AF37, #F4E190);
-  background-size: 300% 300%;
-  border-radius: 26px;
-  z-index: -1;
-  animation: shimmerBorder 4s ease infinite;
-}
-
-@keyframes shimmerBorder {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-/* ─── Testimonial card hover lift ─── */
-.testimonial-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 36px rgba(15,43,71,0.1);
-}
-
-/* ─── FAQ item hover indicator ─── */
-.faq-q:hover span {
-  color: var(--gold);
-}
-
-/* ─── Footer brand shimmer ─── */
-.footer-brand-name {
-  background: linear-gradient(135deg, #D4AF37, #F4E190, #D4AF37);
-  background-size: 200% auto;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-/* ─── Scroll progress bar ─── */
+/* ─── Scroll Progress Bar ─── */
 .scroll-progress {
   position: fixed;
-  top: 0;
-  left: 0;
-  height: 3px;
+  top: 0; left: 0;
+  height: 2px;
   background: linear-gradient(90deg, var(--gold), var(--teal));
   z-index: 10001;
   transition: width 0.1s linear;
-  border-radius: 0 2px 2px 0;
 }
 
-/* ─── Selection color ─── */
-::selection {
-  background: rgba(212,175,55,0.3);
-  color: var(--navy);
-}
+/* ─── Selection ─── */
+::selection { background: rgba(212,175,55,0.25); color: var(--text); }
 
-::-moz-selection {
-  background: rgba(212,175,55,0.3);
-  color: var(--navy);
-}
+/* ─── Focus ─── */
+:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
 
-/* ─── Focus visible for accessibility ─── */
-:focus-visible {
-  outline: 2px solid var(--gold);
-  outline-offset: 3px;
-}
+/* ─── Smooth rendering ─── */
+img { image-rendering: -webkit-optimize-contrast; }
 
-/* ─── Smooth image rendering ─── */
-img {
-  image-rendering: -webkit-optimize-contrast;
-}
-
-/* ─── Print styles ─── */
+/* ─── Print ─── */
 @media print {
-  #navbar, #wa-btn-wrapper, .scroll-progress, .cursor-dot, .cursor-ring, #preloader {
-    display: none !important;
-  }
+  #navbar, #wa-btn-wrapper, .scroll-progress, .cursor-dot, .cursor-ring, #preloader, .orb, .morph-blob { display: none !important; }
   section { page-break-inside: avoid; }
   body { color: black; background: white; }
 }
