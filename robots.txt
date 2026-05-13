@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /api/
 
-Sitemap: https://nexauro.in/sitemap.xml
+Sitemap: https://nexauro.store/sitemap.xml
